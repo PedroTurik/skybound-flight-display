@@ -61,6 +61,10 @@ const FlightDetails = () => {
     });
   };
 
+  const handlePermitStatusChange = (value: string) => {
+    setPermitStatus(value as 'pending' | 'processing' | 'done');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-blue-800 text-white p-4">
@@ -128,7 +132,7 @@ const FlightDetails = () => {
             <CardContent className="space-y-4">
               <div>
                 <Label>Permit Status</Label>
-                <Select value={permitStatus} onValueChange={setPermitStatus}>
+                <Select value={permitStatus} onValueChange={handlePermitStatusChange}>
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
